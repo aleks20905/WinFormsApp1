@@ -36,8 +36,8 @@ namespace WinFormsApp1 {
 
         private void LoadData(string keyword) {
 
-            DataAccess.sql = "SELECT userid, firstname, phonenumber, typeofservices, datetime FROM \"Users\"" +
-                "WHERE CONCAT(CAST(userid as varchar), '',firstname, '', phonenumber, '', typeofservices, '', datetime) LIKE @keyword::varchar ORDER BY userid ASC "; //SELECT
+            DataAccess.sql = "SELECT userid, firstname, phonenumber, typeofservices, datetime, barber FROM \"Users\"" +
+                "WHERE CONCAT(CAST(userid as varchar), '',firstname, '', phonenumber, '', typeofservices, '', datetime, '', barber) LIKE @keyword::varchar ORDER BY userid ASC "; //SELECT
             
 
 
@@ -71,12 +71,16 @@ namespace WinFormsApp1 {
             dg1.Columns[2].HeaderText = "phoneNumber";
             dg1.Columns[3].HeaderText = "typeOfServices";
             dg1.Columns[4].HeaderText = "dateTime";
+            dg1.Columns[5].HeaderText = "barber";
+           
+
 
             dg1.Columns[0].Width = 45;
             dg1.Columns[1].Width = 100;
             dg1.Columns[2].Width = 140;
             dg1.Columns[3].Width = 250;
-            dg1.Columns[4].Width = 250;// ############### data GRID ############################
+            dg1.Columns[4].Width = 250;
+            dg1.Columns[5].Width = 100;// ############### data GRID ############################
 
 
 
@@ -101,7 +105,10 @@ namespace WinFormsApp1 {
             DataAccess.cmd.Parameters.AddWithValue("phoneNumberBox", phoneNumberBox.Text.Trim());
             DataAccess.cmd.Parameters.AddWithValue("typeOfServices", typeOfServicesBox.Text.Trim());
             DataAccess.cmd.Parameters.AddWithValue("dateTime", setTime());
+            DataAccess.cmd.Parameters.AddWithValue("barBer", barberBox.Text.Trim());
             
+
+
             if (str == "Update" || str == "Delete" && !string.IsNullOrEmpty(this.id)) {
                 DataAccess.cmd.Parameters.AddWithValue("id", this.id);
             }
@@ -110,11 +117,11 @@ namespace WinFormsApp1 {
 
         private void button1_Click(object sender, EventArgs e) {
 
-            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim())|| string.IsNullOrEmpty(phoneNumberBox.Text.Trim())|| string.IsNullOrEmpty(typeOfServicesBox.Text.Trim())) {
+            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim())|| string.IsNullOrEmpty(phoneNumberBox.Text.Trim())|| string.IsNullOrEmpty(typeOfServicesBox.Text.Trim()) || string.IsNullOrEmpty(barberBox.Text.Trim()) ) {
                 MessageBox.Show("plese input FName, LName & typeOfServices");
                 return;
             }
-            DataAccess.sql = "INSERT INTO \"Users\" (firstname, phonenumber, typeofservices, datetime) VALUES(@firstName, @phoneNumberBox, @typeOfServices, @dateTime) ";
+            DataAccess.sql = "INSERT INTO \"Users\" (firstname, phonenumber, typeofservices, datetime, barber) VALUES(@firstName, @phoneNumberBox, @typeOfServices, @dateTime, @barBer) ";
 
 
             execute(DataAccess.sql,"Insert");
@@ -140,7 +147,8 @@ namespace WinFormsApp1 {
                 phoneNumberBox.Text = Convert.ToString(dg1.CurrentRow.Cells[2].Value);
                 typeOfServicesBox.Text = Convert.ToString(dg1.CurrentRow.Cells[3].Value);
                 dateTimePicker.Text = Convert.ToString(dg1.CurrentRow.Cells[4].Value);
-
+                barberBox.Text = Convert.ToString(dg1.CurrentRow.Cells[5].Value);
+                
             }
 
         }  
@@ -154,7 +162,7 @@ namespace WinFormsApp1 {
                 return;
             }
 
-            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim()) || string.IsNullOrEmpty(phoneNumberBox.Text.Trim()) || string.IsNullOrEmpty(typeOfServicesBox.Text.Trim()) || string.IsNullOrEmpty(dateTimePicker.Text.Trim())) {
+            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim()) || string.IsNullOrEmpty(phoneNumberBox.Text.Trim()) || string.IsNullOrEmpty(typeOfServicesBox.Text.Trim()) || string.IsNullOrEmpty(barberBox.Text.Trim())) {
                 MessageBox.Show("plese input FName, LName & typeOfServices");
                 return;
             }
@@ -162,9 +170,9 @@ namespace WinFormsApp1 {
             
            
             
-            DataAccess.sql = "UPDATE \"Users\" SET firstName = @firstName, phonenumber = @phoneNumberBox, typeofservices = @typeOfServices, datetime = @dateTime WHERE userid = @id::integer";
+            DataAccess.sql = "UPDATE \"Users\" SET firstName = @firstName, phonenumber = @phoneNumberBox, typeofservices = @typeOfServices, datetime = @dateTime, barber = @barBer WHERE userid = @id::integer";
 
-            MessageBox.Show("fak: " + setTime().ToString() + "    " + DataAccess.sql); // debug
+            //MessageBox.Show("fak: " + setTime().ToString() + "    " + DataAccess.sql); // debug
             execute(DataAccess.sql, "Update");
 
             MessageBox.Show("Tte record has been updated : ", "update data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -186,7 +194,7 @@ namespace WinFormsApp1 {
                 return;
             }
 
-            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim()) || string.IsNullOrEmpty(phoneNumberBox.Text.Trim()) || string.IsNullOrEmpty(typeOfServicesBox.Text.Trim()) || string.IsNullOrEmpty(dateTimePicker.Text.Trim())) {
+            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim()) || string.IsNullOrEmpty(phoneNumberBox.Text.Trim()) || string.IsNullOrEmpty(typeOfServicesBox.Text.Trim()) || string.IsNullOrEmpty(barberBox.Text.Trim()) ) {
                 MessageBox.Show("plese select the record");
                 return;
             }
@@ -254,6 +262,6 @@ namespace WinFormsApp1 {
             if (str.Length<2)  return "0"+str;
             
             return str;
-        }
+        } // only use for searchByDateButton_Click
     }
 }

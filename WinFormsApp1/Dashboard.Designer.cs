@@ -43,6 +43,8 @@
             this.minutsBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.searchByDateButton = new System.Windows.Forms.Button();
+            this.barberBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +61,7 @@
             // 
             // FirstNameBox
             // 
-            this.FirstNameBox.Location = new System.Drawing.Point(763, 445);
+            this.FirstNameBox.Location = new System.Drawing.Point(763, 408);
             this.FirstNameBox.Multiline = true;
             this.FirstNameBox.Name = "FirstNameBox";
             this.FirstNameBox.Size = new System.Drawing.Size(231, 31);
@@ -67,7 +69,7 @@
             // 
             // phoneNumberBox
             // 
-            this.phoneNumberBox.Location = new System.Drawing.Point(763, 482);
+            this.phoneNumberBox.Location = new System.Drawing.Point(763, 445);
             this.phoneNumberBox.Multiline = true;
             this.phoneNumberBox.Name = "phoneNumberBox";
             this.phoneNumberBox.Size = new System.Drawing.Size(231, 31);
@@ -75,7 +77,7 @@
             // 
             // typeOfServicesBox
             // 
-            this.typeOfServicesBox.Location = new System.Drawing.Point(763, 519);
+            this.typeOfServicesBox.Location = new System.Drawing.Point(763, 482);
             this.typeOfServicesBox.Multiline = true;
             this.typeOfServicesBox.Name = "typeOfServicesBox";
             this.typeOfServicesBox.Size = new System.Drawing.Size(231, 31);
@@ -92,7 +94,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(674, 448);
+            this.label1.Location = new System.Drawing.Point(698, 413);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 15);
             this.label1.TabIndex = 7;
@@ -101,7 +103,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(672, 485);
+            this.label2.Location = new System.Drawing.Point(672, 448);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 15);
             this.label2.TabIndex = 8;
@@ -110,7 +112,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(672, 522);
+            this.label3.Location = new System.Drawing.Point(672, 487);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 15);
             this.label3.TabIndex = 9;
@@ -223,11 +225,30 @@
             this.searchByDateButton.UseVisualStyleBackColor = true;
             this.searchByDateButton.Click += new System.EventHandler(this.searchByDateButton_Click);
             // 
+            // barberBox
+            // 
+            this.barberBox.Location = new System.Drawing.Point(763, 519);
+            this.barberBox.Multiline = true;
+            this.barberBox.Name = "barberBox";
+            this.barberBox.Size = new System.Drawing.Size(231, 31);
+            this.barberBox.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(716, 519);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 15);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "barber";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 633);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.barberBox);
             this.Controls.Add(this.searchByDateButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.minutsBox);
@@ -280,5 +301,7 @@
         private TextBox minutsBox;
         private Label label4;
         private Button searchByDateButton;
+        private TextBox barberBox;
+        private Label label5;
     }
 }
