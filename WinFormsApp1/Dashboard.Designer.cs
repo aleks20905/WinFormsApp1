@@ -42,13 +42,14 @@
             this.hoursText = new System.Windows.Forms.Label();
             this.minutsBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.searchByDateButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(867, 545);
+            this.button1.Location = new System.Drawing.Point(867, 556);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 40);
             this.button1.TabIndex = 0;
@@ -58,7 +59,7 @@
             // 
             // FirstNameBox
             // 
-            this.FirstNameBox.Location = new System.Drawing.Point(763, 361);
+            this.FirstNameBox.Location = new System.Drawing.Point(763, 445);
             this.FirstNameBox.Multiline = true;
             this.FirstNameBox.Name = "FirstNameBox";
             this.FirstNameBox.Size = new System.Drawing.Size(231, 31);
@@ -66,7 +67,7 @@
             // 
             // phoneNumberBox
             // 
-            this.phoneNumberBox.Location = new System.Drawing.Point(763, 398);
+            this.phoneNumberBox.Location = new System.Drawing.Point(763, 482);
             this.phoneNumberBox.Multiline = true;
             this.phoneNumberBox.Name = "phoneNumberBox";
             this.phoneNumberBox.Size = new System.Drawing.Size(231, 31);
@@ -74,7 +75,7 @@
             // 
             // typeOfServicesBox
             // 
-            this.typeOfServicesBox.Location = new System.Drawing.Point(763, 435);
+            this.typeOfServicesBox.Location = new System.Drawing.Point(763, 519);
             this.typeOfServicesBox.Multiline = true;
             this.typeOfServicesBox.Name = "typeOfServicesBox";
             this.typeOfServicesBox.Size = new System.Drawing.Size(231, 31);
@@ -82,7 +83,7 @@
             // 
             // listBox
             // 
-            this.listBox.Location = new System.Drawing.Point(12, 267);
+            this.listBox.Location = new System.Drawing.Point(14, 334);
             this.listBox.Multiline = true;
             this.listBox.Name = "listBox";
             this.listBox.Size = new System.Drawing.Size(231, 31);
@@ -91,7 +92,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(674, 364);
+            this.label1.Location = new System.Drawing.Point(674, 448);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 15);
             this.label1.TabIndex = 7;
@@ -100,7 +101,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(672, 401);
+            this.label2.Location = new System.Drawing.Point(672, 485);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 15);
             this.label2.TabIndex = 8;
@@ -109,7 +110,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(672, 438);
+            this.label3.Location = new System.Drawing.Point(672, 522);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 15);
             this.label3.TabIndex = 9;
@@ -121,13 +122,13 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(777, 249);
+            this.dataGridView1.Size = new System.Drawing.Size(982, 316);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(12, 302);
+            this.searchButton.Location = new System.Drawing.Point(14, 369);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(152, 33);
             this.searchButton.TabIndex = 11;
@@ -153,7 +154,7 @@
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(314, 267);
+            this.updateButton.Location = new System.Drawing.Point(316, 334);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(127, 40);
             this.updateButton.TabIndex = 13;
@@ -163,7 +164,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(314, 313);
+            this.deleteButton.Location = new System.Drawing.Point(316, 380);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(127, 40);
             this.deleteButton.TabIndex = 14;
@@ -173,14 +174,14 @@
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(132, 394);
+            this.dateTimePicker.Location = new System.Drawing.Point(14, 453);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker.TabIndex = 15;
             // 
             // hoursBox
             // 
-            this.hoursBox.Location = new System.Drawing.Point(338, 394);
+            this.hoursBox.Location = new System.Drawing.Point(220, 453);
             this.hoursBox.Multiline = true;
             this.hoursBox.Name = "hoursBox";
             this.hoursBox.Size = new System.Drawing.Size(36, 23);
@@ -189,7 +190,7 @@
             // hoursText
             // 
             this.hoursText.AutoSize = true;
-            this.hoursText.Location = new System.Drawing.Point(338, 376);
+            this.hoursText.Location = new System.Drawing.Point(220, 435);
             this.hoursText.Name = "hoursText";
             this.hoursText.Size = new System.Drawing.Size(21, 15);
             this.hoursText.TabIndex = 17;
@@ -197,7 +198,7 @@
             // 
             // minutsBox
             // 
-            this.minutsBox.Location = new System.Drawing.Point(380, 394);
+            this.minutsBox.Location = new System.Drawing.Point(262, 453);
             this.minutsBox.Multiline = true;
             this.minutsBox.Name = "minutsBox";
             this.minutsBox.Size = new System.Drawing.Size(36, 23);
@@ -206,17 +207,28 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(380, 376);
+            this.label4.Location = new System.Drawing.Point(262, 435);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 15);
             this.label4.TabIndex = 19;
             this.label4.Text = "mm";
+            // 
+            // searchByDateButton
+            // 
+            this.searchByDateButton.Location = new System.Drawing.Point(14, 485);
+            this.searchByDateButton.Name = "searchByDateButton";
+            this.searchByDateButton.Size = new System.Drawing.Size(129, 28);
+            this.searchByDateButton.TabIndex = 20;
+            this.searchByDateButton.Text = "Search by date";
+            this.searchByDateButton.UseVisualStyleBackColor = true;
+            this.searchByDateButton.Click += new System.EventHandler(this.searchByDateButton_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 633);
+            this.Controls.Add(this.searchByDateButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.minutsBox);
             this.Controls.Add(this.hoursText);
@@ -267,5 +279,6 @@
         private Label hoursText;
         private TextBox minutsBox;
         private Label label4;
+        private Button searchByDateButton;
     }
 }

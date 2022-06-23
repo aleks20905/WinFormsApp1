@@ -101,7 +101,7 @@ namespace WinFormsApp1 {
             DataAccess.cmd.Parameters.AddWithValue("phoneNumberBox", phoneNumberBox.Text.Trim());
             DataAccess.cmd.Parameters.AddWithValue("typeOfServices", typeOfServicesBox.Text.Trim());
             DataAccess.cmd.Parameters.AddWithValue("dateTime", setTime());
-            //datetime
+            
             if (str == "Update" || str == "Delete" && !string.IsNullOrEmpty(this.id)) {
                 DataAccess.cmd.Parameters.AddWithValue("id", this.id);
             }
@@ -164,7 +164,7 @@ namespace WinFormsApp1 {
             
             DataAccess.sql = "UPDATE \"Users\" SET firstName = @firstName, phonenumber = @phoneNumberBox, typeofservices = @typeOfServices, datetime = @dateTime WHERE userid = @id::integer";
 
-            //MessageBox.Show("fak: " + this.id +"    " + DataAccess.sql); // debug
+            MessageBox.Show("fak: " + setTime().ToString() + "    " + DataAccess.sql); // debug
             execute(DataAccess.sql, "Update");
 
             MessageBox.Show("Tte record has been updated : ", "update data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -241,6 +241,19 @@ namespace WinFormsApp1 {
             restMe();
         }
 
+        private void searchByDateButton_Click(object sender, EventArgs e) {
 
+            LoadData(dateTimePicker.Value.Year.ToString() + "-" + validString(dateTimePicker.Value.Month.ToString()) + "-" + validString(dateTimePicker.Value.Day.ToString()) );
+           // MessageBox.Show(dateTimePicker.Value.Year.ToString() + "-" + validString(dateTimePicker.Value.Month.ToString()) + "-" + validString(dateTimePicker.Value.Day.ToString())); // debug
+
+            restMe();
+
+        }
+        private string validString(string str) {
+            
+            if (str.Length<2)  return "0"+str;
+            
+            return str;
+        }
     }
 }
