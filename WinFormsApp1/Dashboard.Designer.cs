@@ -26,7 +26,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.FirstNameBox = new System.Windows.Forms.TextBox();
             this.phoneNumberBox = new System.Windows.Forms.TextBox();
-            this.MailBox = new System.Windows.Forms.TextBox();
+            this.typeOfServicesBox = new System.Windows.Forms.TextBox();
             this.listBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,13 +68,13 @@
             this.phoneNumberBox.Size = new System.Drawing.Size(231, 31);
             this.phoneNumberBox.TabIndex = 4;
             // 
-            // MailBox
+            // typeOfServicesBox
             // 
-            this.MailBox.Location = new System.Drawing.Point(558, 341);
-            this.MailBox.Multiline = true;
-            this.MailBox.Name = "MailBox";
-            this.MailBox.Size = new System.Drawing.Size(231, 31);
-            this.MailBox.TabIndex = 5;
+            this.typeOfServicesBox.Location = new System.Drawing.Point(558, 341);
+            this.typeOfServicesBox.Multiline = true;
+            this.typeOfServicesBox.Name = "typeOfServicesBox";
+            this.typeOfServicesBox.Size = new System.Drawing.Size(231, 31);
+            this.typeOfServicesBox.TabIndex = 5;
             // 
             // listBox
             // 
@@ -105,11 +105,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(480, 345);
+            this.label3.Location = new System.Drawing.Point(467, 344);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 15);
+            this.label3.Size = new System.Drawing.Size(85, 15);
             this.label3.TabIndex = 9;
-            this.label3.Text = "email";
+            this.label3.Text = "typeOfServices";
             // 
             // dataGridView1
             // 
@@ -189,7 +189,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox);
-            this.Controls.Add(this.MailBox);
+            this.Controls.Add(this.typeOfServicesBox);
             this.Controls.Add(this.phoneNumberBox);
             this.Controls.Add(this.FirstNameBox);
             this.Controls.Add(this.button1);
@@ -209,7 +209,7 @@
         private Button button1;
         private TextBox FirstNameBox;
         private TextBox phoneNumberBox;
-        private TextBox MailBox;
+        private TextBox typeOfServicesBox;
         private TextBox listBox;
         private Label label1;
         private Label label2;

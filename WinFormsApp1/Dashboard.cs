@@ -23,7 +23,7 @@ namespace WinFormsApp1 {
             this.id = string.Empty;
             FirstNameBox.Text = " ";
             phoneNumberBox.Text = " "; // phoneNumber
-            MailBox.Text = " ";
+            typeOfServicesBox.Text = " ";
 
 
             listBox.Clear();
@@ -34,8 +34,8 @@ namespace WinFormsApp1 {
 
         private void LoadData(string keyword) {
 
-            DataAccess.sql = "SELECT userid, firstname, phonenumber, email FROM \"Users\"" +
-                "WHERE CONCAT(CAST(userid as varchar), '',firstname, '', phonenumber, '', email) LIKE @keyword::varchar ORDER BY userid ASC "; //SELECT
+            DataAccess.sql = "SELECT userid, firstname, phonenumber, typeofservices FROM \"Users\"" +
+                "WHERE CONCAT(CAST(userid as varchar), '',firstname, '', phonenumber, '', typeofservices) LIKE @keyword::varchar ORDER BY userid ASC "; //SELECT
             
 
 
@@ -67,7 +67,7 @@ namespace WinFormsApp1 {
             dg1.Columns[0].HeaderText = "ID";
             dg1.Columns[1].HeaderText = "firstName";
             dg1.Columns[2].HeaderText = "phoneNumber";
-            dg1.Columns[3].HeaderText = "email";
+            dg1.Columns[3].HeaderText = "typeOfServices";
 
             dg1.Columns[0].Width = 45;
             dg1.Columns[1].Width = 100;
@@ -95,7 +95,7 @@ namespace WinFormsApp1 {
             DataAccess.cmd.Parameters.Clear();
             DataAccess.cmd.Parameters.AddWithValue("firstName", FirstNameBox.Text.Trim());
             DataAccess.cmd.Parameters.AddWithValue("phoneNumberBox", phoneNumberBox.Text.Trim());
-            DataAccess.cmd.Parameters.AddWithValue("mail", MailBox.Text.Trim());
+            DataAccess.cmd.Parameters.AddWithValue("typeOfServices", typeOfServicesBox.Text.Trim());
 
             if (str == "Update" || str == "Delete" && !string.IsNullOrEmpty(this.id)) {
                 DataAccess.cmd.Parameters.AddWithValue("id", this.id);
@@ -105,11 +105,11 @@ namespace WinFormsApp1 {
 
         private void button1_Click(object sender, EventArgs e) {
 
-            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim())|| string.IsNullOrEmpty(phoneNumberBox.Text.Trim())|| string.IsNullOrEmpty(MailBox.Text.Trim())) {
-                MessageBox.Show("plese input FName, LName & Mail");
+            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim())|| string.IsNullOrEmpty(phoneNumberBox.Text.Trim())|| string.IsNullOrEmpty(typeOfServicesBox.Text.Trim())) {
+                MessageBox.Show("plese input FName, LName & typeOfServices");
                 return;
             }
-            DataAccess.sql = "INSERT INTO \"Users\" (firstname, phonenumber, email) VALUES(@firstName, @phoneNumberBox, @mail) ";
+            DataAccess.sql = "INSERT INTO \"Users\" (firstname, phonenumber, typeofservices) VALUES(@firstName, @phoneNumberBox, @typeOfServices) ";
 
 
             execute(DataAccess.sql,"Insert");
@@ -133,7 +133,7 @@ namespace WinFormsApp1 {
 
                 FirstNameBox.Text = Convert.ToString(dg1.CurrentRow.Cells[1].Value);
                 phoneNumberBox.Text = Convert.ToString(dg1.CurrentRow.Cells[2].Value);
-                MailBox.Text = Convert.ToString(dg1.CurrentRow.Cells[3].Value);
+                typeOfServicesBox.Text = Convert.ToString(dg1.CurrentRow.Cells[3].Value);
 
             }
 
@@ -148,12 +148,12 @@ namespace WinFormsApp1 {
                 return;
             }
 
-            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim()) || string.IsNullOrEmpty(phoneNumberBox.Text.Trim()) || string.IsNullOrEmpty(MailBox.Text.Trim())) {
-                MessageBox.Show("plese input FName, LName & Mail");
+            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim()) || string.IsNullOrEmpty(phoneNumberBox.Text.Trim()) || string.IsNullOrEmpty(typeOfServicesBox.Text.Trim())) {
+                MessageBox.Show("plese input FName, LName & typeOfServices");
                 return;
             }
 
-            DataAccess.sql = "UPDATE \"Users\" SET firstName = @firstName, phonenumber = @phoneNumberBox, email = @mail WHERE userid = @id::integer";
+            DataAccess.sql = "UPDATE \"Users\" SET firstName = @firstName, phonenumber = @phoneNumberBox, typeofservices = @typeOfServices WHERE userid = @id::integer";
 
             //MessageBox.Show("fak: " + this.id +"    " + DataAccess.sql); // debug
             execute(DataAccess.sql, "Update");
@@ -177,7 +177,7 @@ namespace WinFormsApp1 {
                 return;
             }
 
-            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim()) || string.IsNullOrEmpty(phoneNumberBox.Text.Trim()) || string.IsNullOrEmpty(MailBox.Text.Trim())) {
+            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim()) || string.IsNullOrEmpty(phoneNumberBox.Text.Trim()) || string.IsNullOrEmpty(typeOfServicesBox.Text.Trim())) {
                 MessageBox.Show("plese select the record");
                 return;
             }
