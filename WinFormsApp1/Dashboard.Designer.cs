@@ -37,14 +37,18 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.updateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.hoursBox = new System.Windows.Forms.TextBox();
+            this.hoursText = new System.Windows.Forms.Label();
+            this.minutsBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(662, 378);
+            this.button1.Location = new System.Drawing.Point(867, 545);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 40);
             this.button1.TabIndex = 0;
@@ -54,7 +58,7 @@
             // 
             // FirstNameBox
             // 
-            this.FirstNameBox.Location = new System.Drawing.Point(558, 267);
+            this.FirstNameBox.Location = new System.Drawing.Point(763, 361);
             this.FirstNameBox.Multiline = true;
             this.FirstNameBox.Name = "FirstNameBox";
             this.FirstNameBox.Size = new System.Drawing.Size(231, 31);
@@ -62,7 +66,7 @@
             // 
             // phoneNumberBox
             // 
-            this.phoneNumberBox.Location = new System.Drawing.Point(558, 304);
+            this.phoneNumberBox.Location = new System.Drawing.Point(763, 398);
             this.phoneNumberBox.Multiline = true;
             this.phoneNumberBox.Name = "phoneNumberBox";
             this.phoneNumberBox.Size = new System.Drawing.Size(231, 31);
@@ -70,7 +74,7 @@
             // 
             // typeOfServicesBox
             // 
-            this.typeOfServicesBox.Location = new System.Drawing.Point(558, 341);
+            this.typeOfServicesBox.Location = new System.Drawing.Point(763, 435);
             this.typeOfServicesBox.Multiline = true;
             this.typeOfServicesBox.Name = "typeOfServicesBox";
             this.typeOfServicesBox.Size = new System.Drawing.Size(231, 31);
@@ -87,7 +91,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(469, 270);
+            this.label1.Location = new System.Drawing.Point(674, 364);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 15);
             this.label1.TabIndex = 7;
@@ -96,7 +100,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(467, 307);
+            this.label2.Location = new System.Drawing.Point(672, 401);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 15);
             this.label2.TabIndex = 8;
@@ -105,7 +109,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(467, 344);
+            this.label3.Location = new System.Drawing.Point(672, 438);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 15);
             this.label3.TabIndex = 9;
@@ -135,9 +139,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 611);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(794, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1006, 22);
             this.statusStrip1.TabIndex = 12;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -167,19 +171,57 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(132, 394);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 15;
+            this.dateTimePicker.Location = new System.Drawing.Point(132, 394);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker.TabIndex = 15;
+            // 
+            // hoursBox
+            // 
+            this.hoursBox.Location = new System.Drawing.Point(338, 394);
+            this.hoursBox.Multiline = true;
+            this.hoursBox.Name = "hoursBox";
+            this.hoursBox.Size = new System.Drawing.Size(36, 23);
+            this.hoursBox.TabIndex = 16;
+            // 
+            // hoursText
+            // 
+            this.hoursText.AutoSize = true;
+            this.hoursText.Location = new System.Drawing.Point(338, 376);
+            this.hoursText.Name = "hoursText";
+            this.hoursText.Size = new System.Drawing.Size(21, 15);
+            this.hoursText.TabIndex = 17;
+            this.hoursText.Text = "hh";
+            // 
+            // minutsBox
+            // 
+            this.minutsBox.Location = new System.Drawing.Point(380, 394);
+            this.minutsBox.Multiline = true;
+            this.minutsBox.Name = "minutsBox";
+            this.minutsBox.Size = new System.Drawing.Size(36, 23);
+            this.minutsBox.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(380, 376);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 15);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "mm";
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 450);
-            this.Controls.Add(this.dateTimePicker1);
+            this.ClientSize = new System.Drawing.Size(1006, 633);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.minutsBox);
+            this.Controls.Add(this.hoursText);
+            this.Controls.Add(this.hoursBox);
+            this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.statusStrip1);
@@ -220,6 +262,10 @@
         private ToolStripStatusLabel toolStripStatusLabel1;
         private Button updateButton;
         private Button deleteButton;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker;
+        private TextBox hoursBox;
+        private Label hoursText;
+        private TextBox minutsBox;
+        private Label label4;
     }
 }
