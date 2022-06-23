@@ -25,7 +25,7 @@
         private void InitializeComponent() {
             this.button1 = new System.Windows.Forms.Button();
             this.FirstNameBox = new System.Windows.Forms.TextBox();
-            this.LastNameBox = new System.Windows.Forms.TextBox();
+            this.phoneNumberBox = new System.Windows.Forms.TextBox();
             this.MailBox = new System.Windows.Forms.TextBox();
             this.listBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,6 +37,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.updateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -59,13 +60,13 @@
             this.FirstNameBox.Size = new System.Drawing.Size(231, 31);
             this.FirstNameBox.TabIndex = 3;
             // 
-            // LastNameBox
+            // phoneNumberBox
             // 
-            this.LastNameBox.Location = new System.Drawing.Point(558, 304);
-            this.LastNameBox.Multiline = true;
-            this.LastNameBox.Name = "LastNameBox";
-            this.LastNameBox.Size = new System.Drawing.Size(231, 31);
-            this.LastNameBox.TabIndex = 4;
+            this.phoneNumberBox.Location = new System.Drawing.Point(558, 304);
+            this.phoneNumberBox.Multiline = true;
+            this.phoneNumberBox.Name = "phoneNumberBox";
+            this.phoneNumberBox.Size = new System.Drawing.Size(231, 31);
+            this.phoneNumberBox.TabIndex = 4;
             // 
             // MailBox
             // 
@@ -95,11 +96,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(471, 308);
+            this.label2.Location = new System.Drawing.Point(467, 307);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 15);
+            this.label2.Size = new System.Drawing.Size(85, 15);
             this.label2.TabIndex = 8;
-            this.label2.Text = "lastName";
+            this.label2.Text = "phoneNumber";
             // 
             // label3
             // 
@@ -166,11 +167,19 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(132, 394);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker1.TabIndex = 15;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 450);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.statusStrip1);
@@ -181,7 +190,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox);
             this.Controls.Add(this.MailBox);
-            this.Controls.Add(this.LastNameBox);
+            this.Controls.Add(this.phoneNumberBox);
             this.Controls.Add(this.FirstNameBox);
             this.Controls.Add(this.button1);
             this.Name = "Dashboard";
@@ -199,7 +208,7 @@
 
         private Button button1;
         private TextBox FirstNameBox;
-        private TextBox LastNameBox;
+        private TextBox phoneNumberBox;
         private TextBox MailBox;
         private TextBox listBox;
         private Label label1;
@@ -211,5 +220,6 @@
         private ToolStripStatusLabel toolStripStatusLabel1;
         private Button updateButton;
         private Button deleteButton;
+        private DateTimePicker dateTimePicker1;
     }
 }

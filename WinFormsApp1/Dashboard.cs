@@ -22,7 +22,7 @@ namespace WinFormsApp1 {
         private void restMe() {//reset everyting
             this.id = string.Empty;
             FirstNameBox.Text = " ";
-            LastNameBox.Text = " ";
+            phoneNumberBox.Text = " "; // phoneNumber
             MailBox.Text = " ";
 
 
@@ -30,12 +30,12 @@ namespace WinFormsApp1 {
             if (listBox.CanSelect) {
                 listBox.Select();
             }
-        }
+        } // TODO ################
 
         private void LoadData(string keyword) {
 
-            DataAccess.sql = "SELECT userid, firstname, lastname, email FROM \"Users\"" +
-                "WHERE CONCAT(CAST(userid as varchar), '',firstname, '', lastname, '', email) LIKE @keyword::varchar ORDER BY userid ASC "; //SELECT
+            DataAccess.sql = "SELECT userid, firstname, phonenumber, email FROM \"Users\"" +
+                "WHERE CONCAT(CAST(userid as varchar), '',firstname, '', phonenumber, '', email) LIKE @keyword::varchar ORDER BY userid ASC "; //SELECT
             
 
 
@@ -66,7 +66,7 @@ namespace WinFormsApp1 {
 
             dg1.Columns[0].HeaderText = "ID";
             dg1.Columns[1].HeaderText = "firstName";
-            dg1.Columns[2].HeaderText = "lastName";
+            dg1.Columns[2].HeaderText = "phoneNumber";
             dg1.Columns[3].HeaderText = "email";
 
             dg1.Columns[0].Width = 45;
@@ -78,7 +78,7 @@ namespace WinFormsApp1 {
 
 
 
-        }
+        }  // TODO ################
 
 
         private void execute(string mySQL, string param) {
@@ -94,22 +94,22 @@ namespace WinFormsApp1 {
 
             DataAccess.cmd.Parameters.Clear();
             DataAccess.cmd.Parameters.AddWithValue("firstName", FirstNameBox.Text.Trim());
-            DataAccess.cmd.Parameters.AddWithValue("lastName", LastNameBox.Text.Trim());
+            DataAccess.cmd.Parameters.AddWithValue("phoneNumberBox", phoneNumberBox.Text.Trim());
             DataAccess.cmd.Parameters.AddWithValue("mail", MailBox.Text.Trim());
 
             if (str == "Update" || str == "Delete" && !string.IsNullOrEmpty(this.id)) {
                 DataAccess.cmd.Parameters.AddWithValue("id", this.id);
             }
 
-        }
+        }  // TODO ################
 
         private void button1_Click(object sender, EventArgs e) {
 
-            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim())|| string.IsNullOrEmpty(LastNameBox.Text.Trim())|| string.IsNullOrEmpty(MailBox.Text.Trim())) {
+            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim())|| string.IsNullOrEmpty(phoneNumberBox.Text.Trim())|| string.IsNullOrEmpty(MailBox.Text.Trim())) {
                 MessageBox.Show("plese input FName, LName & Mail");
                 return;
             }
-            DataAccess.sql = "INSERT INTO \"Users\" (firstname, lastname, email) VALUES(@firstName, @lastName, @mail) ";
+            DataAccess.sql = "INSERT INTO \"Users\" (firstname, phonenumber, email) VALUES(@firstName, @phoneNumberBox, @mail) ";
 
 
             execute(DataAccess.sql,"Insert");
@@ -120,9 +120,9 @@ namespace WinFormsApp1 {
 
             restMe();
 
-        }
+        }  // TODO ################
 
-       
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
             if (e.RowIndex != -1) {
                 DataGridView dg1 = dataGridView1;
@@ -132,12 +132,12 @@ namespace WinFormsApp1 {
                 deleteButton.Text = "Delete (" + this.id + ")";
 
                 FirstNameBox.Text = Convert.ToString(dg1.CurrentRow.Cells[1].Value);
-                LastNameBox.Text = Convert.ToString(dg1.CurrentRow.Cells[2].Value);
+                phoneNumberBox.Text = Convert.ToString(dg1.CurrentRow.Cells[2].Value);
                 MailBox.Text = Convert.ToString(dg1.CurrentRow.Cells[3].Value);
 
             }
 
-        }
+        }  // TODO ################
 
         private void updateButton_Click(object sender, EventArgs e) {
             if (dataGridView1.Rows.Count == 0) return;
@@ -148,12 +148,12 @@ namespace WinFormsApp1 {
                 return;
             }
 
-            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim()) || string.IsNullOrEmpty(LastNameBox.Text.Trim()) || string.IsNullOrEmpty(MailBox.Text.Trim())) {
+            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim()) || string.IsNullOrEmpty(phoneNumberBox.Text.Trim()) || string.IsNullOrEmpty(MailBox.Text.Trim())) {
                 MessageBox.Show("plese input FName, LName & Mail");
                 return;
             }
 
-            DataAccess.sql = "UPDATE \"Users\" SET firstName = @firstName, lastname = @lastName, email = @mail WHERE userid = @id::integer";
+            DataAccess.sql = "UPDATE \"Users\" SET firstName = @firstName, phonenumber = @phoneNumberBox, email = @mail WHERE userid = @id::integer";
 
             //MessageBox.Show("fak: " + this.id +"    " + DataAccess.sql); // debug
             execute(DataAccess.sql, "Update");
@@ -165,7 +165,7 @@ namespace WinFormsApp1 {
             restMe();
 
 
-        }
+        }  // TODO ################
 
         private void deleteButton_Click(object sender, EventArgs e) {
 
@@ -177,8 +177,8 @@ namespace WinFormsApp1 {
                 return;
             }
 
-            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim()) || string.IsNullOrEmpty(LastNameBox.Text.Trim()) || string.IsNullOrEmpty(MailBox.Text.Trim())) {
-                MessageBox.Show("plese input FName, LName & Mail");
+            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim()) || string.IsNullOrEmpty(phoneNumberBox.Text.Trim()) || string.IsNullOrEmpty(MailBox.Text.Trim())) {
+                MessageBox.Show("plese select the record");
                 return;
             }
 
@@ -197,10 +197,10 @@ namespace WinFormsApp1 {
 
             }
 
-           
 
 
-        }
+
+        }  // TODO ################
 
         private void searchButton_Click(object sender, EventArgs e) {
 
@@ -219,5 +219,7 @@ namespace WinFormsApp1 {
 
             restMe();
         }
+
+
     }
 }
