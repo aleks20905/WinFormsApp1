@@ -24,9 +24,9 @@
         /// </summary>
         private void InitializeComponent() {
             this.button1 = new System.Windows.Forms.Button();
-            this.FirstNameBox = new System.Windows.Forms.TextBox();
-            this.phoneNumberBox = new System.Windows.Forms.TextBox();
-            this.typeOfServicesBox = new System.Windows.Forms.TextBox();
+            this.trainIDBox = new System.Windows.Forms.TextBox();
+            this.trainNameBox = new System.Windows.Forms.TextBox();
+            this.typeOfTrainBox = new System.Windows.Forms.TextBox();
             this.listBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,13 +37,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.updateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.hoursBox = new System.Windows.Forms.TextBox();
-            this.hoursText = new System.Windows.Forms.Label();
-            this.minutsBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.searchByDateButton = new System.Windows.Forms.Button();
-            this.barberBox = new System.Windows.Forms.TextBox();
+            this.vagoniBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -51,88 +45,99 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(867, 556);
+            this.button1.Location = new System.Drawing.Point(1241, 806);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 40);
+            this.button1.Size = new System.Drawing.Size(181, 67);
             this.button1.TabIndex = 0;
             this.button1.Text = "insert";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // FirstNameBox
+            // trainIDBox
             // 
-            this.FirstNameBox.Location = new System.Drawing.Point(763, 408);
-            this.FirstNameBox.Multiline = true;
-            this.FirstNameBox.Name = "FirstNameBox";
-            this.FirstNameBox.Size = new System.Drawing.Size(231, 31);
-            this.FirstNameBox.TabIndex = 3;
+            this.trainIDBox.Location = new System.Drawing.Point(1092, 559);
+            this.trainIDBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.trainIDBox.Multiline = true;
+            this.trainIDBox.Name = "trainIDBox";
+            this.trainIDBox.Size = new System.Drawing.Size(328, 49);
+            this.trainIDBox.TabIndex = 3;
             // 
-            // phoneNumberBox
+            // trainNameBox
             // 
-            this.phoneNumberBox.Location = new System.Drawing.Point(763, 445);
-            this.phoneNumberBox.Multiline = true;
-            this.phoneNumberBox.Name = "phoneNumberBox";
-            this.phoneNumberBox.Size = new System.Drawing.Size(231, 31);
-            this.phoneNumberBox.TabIndex = 4;
+            this.trainNameBox.Location = new System.Drawing.Point(1092, 621);
+            this.trainNameBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.trainNameBox.Multiline = true;
+            this.trainNameBox.Name = "trainNameBox";
+            this.trainNameBox.Size = new System.Drawing.Size(328, 49);
+            this.trainNameBox.TabIndex = 4;
             // 
-            // typeOfServicesBox
+            // typeOfTrainBox
             // 
-            this.typeOfServicesBox.Location = new System.Drawing.Point(763, 482);
-            this.typeOfServicesBox.Multiline = true;
-            this.typeOfServicesBox.Name = "typeOfServicesBox";
-            this.typeOfServicesBox.Size = new System.Drawing.Size(231, 31);
-            this.typeOfServicesBox.TabIndex = 5;
+            this.typeOfTrainBox.Location = new System.Drawing.Point(1092, 682);
+            this.typeOfTrainBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.typeOfTrainBox.Multiline = true;
+            this.typeOfTrainBox.Name = "typeOfTrainBox";
+            this.typeOfTrainBox.Size = new System.Drawing.Size(328, 49);
+            this.typeOfTrainBox.TabIndex = 5;
             // 
             // listBox
             // 
-            this.listBox.Location = new System.Drawing.Point(14, 334);
+            this.listBox.Location = new System.Drawing.Point(20, 557);
+            this.listBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBox.Multiline = true;
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(231, 31);
+            this.listBox.Size = new System.Drawing.Size(328, 49);
             this.listBox.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(698, 413);
+            this.label1.Location = new System.Drawing.Point(999, 567);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 15);
+            this.label1.Size = new System.Drawing.Size(65, 25);
             this.label1.TabIndex = 7;
-            this.label1.Text = "firstName";
+            this.label1.Text = "trainID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(672, 448);
+            this.label2.Location = new System.Drawing.Point(962, 626);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 15);
+            this.label2.Size = new System.Drawing.Size(94, 25);
             this.label2.TabIndex = 8;
-            this.label2.Text = "phoneNumber";
+            this.label2.Text = "trainName";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(672, 487);
+            this.label3.Location = new System.Drawing.Point(962, 691);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 15);
+            this.label3.Size = new System.Drawing.Size(109, 25);
             this.label3.TabIndex = 9;
-            this.label3.Text = "typeOfServices";
+            this.label3.Text = "type of train";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 20);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(982, 316);
+            this.dataGridView1.Size = new System.Drawing.Size(1403, 527);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(14, 369);
+            this.searchButton.Location = new System.Drawing.Point(20, 615);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(152, 33);
+            this.searchButton.Size = new System.Drawing.Size(217, 55);
             this.searchButton.TabIndex = 11;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -140,25 +145,28 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 611);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 873);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1006, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 20, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1437, 32);
             this.statusStrip1.TabIndex = 12;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(110, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(166, 25);
             this.toolStripStatusLabel1.Text = "number of rows (s):";
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(316, 334);
+            this.updateButton.Location = new System.Drawing.Point(451, 557);
+            this.updateButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(127, 40);
+            this.updateButton.Size = new System.Drawing.Size(181, 67);
             this.updateButton.TabIndex = 13;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
@@ -166,95 +174,41 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(316, 380);
+            this.deleteButton.Location = new System.Drawing.Point(451, 633);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(127, 40);
+            this.deleteButton.Size = new System.Drawing.Size(181, 67);
             this.deleteButton.TabIndex = 14;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
-            // dateTimePicker
+            // vagoniBox
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(14, 453);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker.TabIndex = 15;
-            // 
-            // hoursBox
-            // 
-            this.hoursBox.Location = new System.Drawing.Point(220, 453);
-            this.hoursBox.Multiline = true;
-            this.hoursBox.Name = "hoursBox";
-            this.hoursBox.Size = new System.Drawing.Size(36, 23);
-            this.hoursBox.TabIndex = 16;
-            // 
-            // hoursText
-            // 
-            this.hoursText.AutoSize = true;
-            this.hoursText.Location = new System.Drawing.Point(220, 435);
-            this.hoursText.Name = "hoursText";
-            this.hoursText.Size = new System.Drawing.Size(21, 15);
-            this.hoursText.TabIndex = 17;
-            this.hoursText.Text = "hh";
-            // 
-            // minutsBox
-            // 
-            this.minutsBox.Location = new System.Drawing.Point(262, 453);
-            this.minutsBox.Multiline = true;
-            this.minutsBox.Name = "minutsBox";
-            this.minutsBox.Size = new System.Drawing.Size(36, 23);
-            this.minutsBox.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(262, 435);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 15);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "mm";
-            // 
-            // searchByDateButton
-            // 
-            this.searchByDateButton.Location = new System.Drawing.Point(14, 485);
-            this.searchByDateButton.Name = "searchByDateButton";
-            this.searchByDateButton.Size = new System.Drawing.Size(129, 28);
-            this.searchByDateButton.TabIndex = 20;
-            this.searchByDateButton.Text = "Search by date";
-            this.searchByDateButton.UseVisualStyleBackColor = true;
-            this.searchByDateButton.Click += new System.EventHandler(this.searchByDateButton_Click);
-            // 
-            // barberBox
-            // 
-            this.barberBox.Location = new System.Drawing.Point(763, 519);
-            this.barberBox.Multiline = true;
-            this.barberBox.Name = "barberBox";
-            this.barberBox.Size = new System.Drawing.Size(231, 31);
-            this.barberBox.TabIndex = 21;
+            this.vagoniBox.Location = new System.Drawing.Point(1092, 744);
+            this.vagoniBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.vagoniBox.Multiline = true;
+            this.vagoniBox.Name = "vagoniBox";
+            this.vagoniBox.Size = new System.Drawing.Size(328, 49);
+            this.vagoniBox.TabIndex = 21;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(716, 519);
+            this.label5.Location = new System.Drawing.Point(998, 747);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 15);
+            this.label5.Size = new System.Drawing.Size(66, 25);
             this.label5.TabIndex = 22;
-            this.label5.Text = "barber";
+            this.label5.Text = "vagoni";
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 633);
+            this.ClientSize = new System.Drawing.Size(1437, 905);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.barberBox);
-            this.Controls.Add(this.searchByDateButton);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.minutsBox);
-            this.Controls.Add(this.hoursText);
-            this.Controls.Add(this.hoursBox);
-            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.vagoniBox);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.statusStrip1);
@@ -264,10 +218,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox);
-            this.Controls.Add(this.typeOfServicesBox);
-            this.Controls.Add(this.phoneNumberBox);
-            this.Controls.Add(this.FirstNameBox);
+            this.Controls.Add(this.typeOfTrainBox);
+            this.Controls.Add(this.trainNameBox);
+            this.Controls.Add(this.trainIDBox);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Dashboard";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Dashboard_Load);
@@ -282,9 +237,9 @@
         #endregion
 
         private Button button1;
-        private TextBox FirstNameBox;
-        private TextBox phoneNumberBox;
-        private TextBox typeOfServicesBox;
+        private TextBox trainIDBox;
+        private TextBox trainNameBox;
+        private TextBox typeOfTrainBox;
         private TextBox listBox;
         private Label label1;
         private Label label2;
@@ -295,13 +250,7 @@
         private ToolStripStatusLabel toolStripStatusLabel1;
         private Button updateButton;
         private Button deleteButton;
-        private DateTimePicker dateTimePicker;
-        private TextBox hoursBox;
-        private Label hoursText;
-        private TextBox minutsBox;
-        private Label label4;
-        private Button searchByDateButton;
-        private TextBox barberBox;
+        private TextBox vagoniBox;
         private Label label5;
     }
 }

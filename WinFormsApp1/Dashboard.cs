@@ -21,11 +21,11 @@ namespace WinFormsApp1 {
         }
         private void restMe() {//reset everyting
             this.id = string.Empty;
-            FirstNameBox.Text = " ";
-            phoneNumberBox.Text = " "; 
-            typeOfServicesBox.Text = " ";
-            hoursBox.Text = "";
-            minutsBox.Text = "";
+            trainIDBox.Text = " "; // to do
+            trainNameBox.Text = " "; 
+            typeOfTrainBox.Text = " ";
+            vagoniBox.Text = " "; 
+
 
 
             listBox.Clear();
@@ -36,8 +36,8 @@ namespace WinFormsApp1 {
 
         private void LoadData(string keyword) {
 
-            DataAccess.sql = "SELECT userid, firstname, phonenumber, typeofservices, datetime, barber FROM \"Users\"" +
-                "WHERE CONCAT(CAST(userid as varchar), '',firstname, '', phonenumber, '', typeofservices, '', datetime, '', barber) LIKE @keyword::varchar ORDER BY userid ASC "; //SELECT
+            DataAccess.sql = "SELECT trainid, name, type, vagoni FROM \"train\"" +
+                "WHERE CONCAT(CAST(trainid as varchar), '',name, '', type, '', CAST(vagoni as varchar)) LIKE @keyword::varchar ORDER BY trainid ASC "; //SELECT
             
 
 
@@ -67,20 +67,16 @@ namespace WinFormsApp1 {
             dg1.DataSource = dt;
 
             dg1.Columns[0].HeaderText = "ID";
-            dg1.Columns[1].HeaderText = "firstName";
-            dg1.Columns[2].HeaderText = "phoneNumber";
-            dg1.Columns[3].HeaderText = "typeOfServices";
-            dg1.Columns[4].HeaderText = "dateTime";
-            dg1.Columns[5].HeaderText = "barber";
+            dg1.Columns[1].HeaderText = "trainName";
+            dg1.Columns[2].HeaderText = "train type";
+            dg1.Columns[3].HeaderText = "vagoni";
            
 
 
-            dg1.Columns[0].Width = 45;
-            dg1.Columns[1].Width = 100;
-            dg1.Columns[2].Width = 140;
-            dg1.Columns[3].Width = 250;
-            dg1.Columns[4].Width = 250;
-            dg1.Columns[5].Width = 100;// ############### data GRID ############################
+            dg1.Columns[0].Width = 100;
+            dg1.Columns[1].Width = 200;
+            dg1.Columns[2].Width = 100;
+            dg1.Columns[3].Width = 100;// ############### data GRID ############################
 
 
 
@@ -100,28 +96,28 @@ namespace WinFormsApp1 {
 
         private void AddParam(string str) {
 
+           
+
             DataAccess.cmd.Parameters.Clear();
-            DataAccess.cmd.Parameters.AddWithValue("firstName", FirstNameBox.Text.Trim());
-            DataAccess.cmd.Parameters.AddWithValue("phoneNumberBox", phoneNumberBox.Text.Trim());
-            DataAccess.cmd.Parameters.AddWithValue("typeOfServices", typeOfServicesBox.Text.Trim());
-            DataAccess.cmd.Parameters.AddWithValue("dateTime", setTime());
-            DataAccess.cmd.Parameters.AddWithValue("barBer", barberBox.Text.Trim());
-            
+            DataAccess.cmd.Parameters.AddWithValue("id", Convert.ToInt32(trainIDBox.Text.Trim()));
+            DataAccess.cmd.Parameters.AddWithValue("name", trainNameBox.Text.Trim());
+            DataAccess.cmd.Parameters.AddWithValue("type", typeOfTrainBox.Text.Trim());
+            DataAccess.cmd.Parameters.AddWithValue("vagoni", Convert.ToInt32(vagoniBox.Text.Trim()));
 
 
-            if (str == "Update" || str == "Delete" && !string.IsNullOrEmpty(this.id)) {
-                DataAccess.cmd.Parameters.AddWithValue("id", this.id);
-            }
+            //if (str == "Update" || str == "Delete" && !string.IsNullOrEmpty(this.id)) {
+            //    DataAccess.cmd.Parameters.AddWithValue("id", this.id);
+            //}
 
         }  
 
         private void button1_Click(object sender, EventArgs e) {
 
-            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim())|| string.IsNullOrEmpty(phoneNumberBox.Text.Trim())|| string.IsNullOrEmpty(typeOfServicesBox.Text.Trim()) || string.IsNullOrEmpty(barberBox.Text.Trim()) ) {
+            if (string.IsNullOrEmpty(trainIDBox.Text.Trim())|| string.IsNullOrEmpty(trainNameBox.Text.Trim())|| string.IsNullOrEmpty(typeOfTrainBox.Text.Trim()) || string.IsNullOrEmpty(vagoniBox.Text.Trim()) ) {
                 MessageBox.Show("plese input FName, LName & typeOfServices");
                 return;
             }
-            DataAccess.sql = "INSERT INTO \"Users\" (firstname, phonenumber, typeofservices, datetime, barber) VALUES(@firstName, @phoneNumberBox, @typeOfServices, @dateTime, @barBer) ";
+            DataAccess.sql = "INSERT INTO \"train\" (trainid, name, type, vagoni) VALUES(@id, @name, @type, @vagoni) ";
 
 
             execute(DataAccess.sql,"Insert");
@@ -143,11 +139,11 @@ namespace WinFormsApp1 {
                 updateButton.Text = "Update (" + this.id + ")";
                 deleteButton.Text = "Delete (" + this.id + ")";
 
-                FirstNameBox.Text = Convert.ToString(dg1.CurrentRow.Cells[1].Value);
-                phoneNumberBox.Text = Convert.ToString(dg1.CurrentRow.Cells[2].Value);
-                typeOfServicesBox.Text = Convert.ToString(dg1.CurrentRow.Cells[3].Value);
-                dateTimePicker.Text = Convert.ToString(dg1.CurrentRow.Cells[4].Value);
-                barberBox.Text = Convert.ToString(dg1.CurrentRow.Cells[5].Value);
+                trainIDBox.Text = Convert.ToString(dg1.CurrentRow.Cells[0].Value); // id
+                trainNameBox.Text = Convert.ToString(dg1.CurrentRow.Cells[1].Value); // name
+                typeOfTrainBox.Text = Convert.ToString(dg1.CurrentRow.Cells[2].Value); // type
+                vagoniBox.Text = Convert.ToString(dg1.CurrentRow.Cells[3].Value);//vagoni
+
                 
             }
 
@@ -162,7 +158,7 @@ namespace WinFormsApp1 {
                 return;
             }
 
-            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim()) || string.IsNullOrEmpty(phoneNumberBox.Text.Trim()) || string.IsNullOrEmpty(typeOfServicesBox.Text.Trim()) || string.IsNullOrEmpty(barberBox.Text.Trim())) {
+            if (string.IsNullOrEmpty(trainIDBox.Text.Trim()) || string.IsNullOrEmpty(trainNameBox.Text.Trim()) || string.IsNullOrEmpty(typeOfTrainBox.Text.Trim()) || string.IsNullOrEmpty(vagoniBox.Text.Trim())) {
                 MessageBox.Show("plese input FName, LName & typeOfServices");
                 return;
             }
@@ -170,7 +166,7 @@ namespace WinFormsApp1 {
             
            
             
-            DataAccess.sql = "UPDATE \"Users\" SET firstName = @firstName, phonenumber = @phoneNumberBox, typeofservices = @typeOfServices, datetime = @dateTime, barber = @barBer WHERE userid = @id::integer";
+            DataAccess.sql = "UPDATE \"train\" SET  name = @name, type = @type, vagoni = @vagoni WHERE trainid = @id::integer"; //  ??
 
             //MessageBox.Show("fak: " + setTime().ToString() + "    " + DataAccess.sql); // debug
             execute(DataAccess.sql, "Update");
@@ -194,14 +190,14 @@ namespace WinFormsApp1 {
                 return;
             }
 
-            if (string.IsNullOrEmpty(FirstNameBox.Text.Trim()) || string.IsNullOrEmpty(phoneNumberBox.Text.Trim()) || string.IsNullOrEmpty(typeOfServicesBox.Text.Trim()) || string.IsNullOrEmpty(barberBox.Text.Trim()) ) {
+            if (string.IsNullOrEmpty(trainIDBox.Text.Trim()) || string.IsNullOrEmpty(trainNameBox.Text.Trim()) || string.IsNullOrEmpty(typeOfTrainBox.Text.Trim()) || string.IsNullOrEmpty(vagoniBox.Text.Trim()) ) {
                 MessageBox.Show("plese select the record");
                 return;
             }
 
             if (MessageBox.Show("Do you want to permanently delete the selected record","Detete data ",MessageBoxButtons.YesNo,MessageBoxIcon.Question,MessageBoxDefaultButton.Button1)==DialogResult.Yes) {
 
-                DataAccess.sql = "DELETE FROM \"Users\" WHERE userid = @id::integer";
+                DataAccess.sql = "DELETE FROM \"train\" WHERE trainid = @id::integer";
 
                 //MessageBox.Show("fak: " + this.id +"    " + DataAccess.sql); // debug
                 execute(DataAccess.sql, "Delete");
@@ -218,18 +214,7 @@ namespace WinFormsApp1 {
 
 
         }
-        private DateTime setTime() {
-
-            if (string.IsNullOrEmpty(hoursBox.Text.Trim()) && string.IsNullOrEmpty(minutsBox.Text.Trim()))
-                return new DateTime(dateTimePicker.Value.Year, dateTimePicker.Value.Month, dateTimePicker.Value.Day, 12, 0, 0);
-
-            if (string.IsNullOrEmpty(minutsBox.Text.Trim()))
-                return new DateTime(dateTimePicker.Value.Year, dateTimePicker.Value.Month, dateTimePicker.Value.Day, Convert.ToInt32(hoursBox.Text.Trim()), 0, 0);
-
-            
-
-            return new DateTime(dateTimePicker.Value.Year, dateTimePicker.Value.Month, dateTimePicker.Value.Day, Convert.ToInt32(hoursBox.Text.Trim()) , Convert.ToInt32(minutsBox.Text.Trim()), 0);
-        }
+       
 
         private void searchButton_Click(object sender, EventArgs e) {
 
@@ -249,19 +234,7 @@ namespace WinFormsApp1 {
             restMe();
         }
 
-        private void searchByDateButton_Click(object sender, EventArgs e) {
-
-            LoadData(dateTimePicker.Value.Year.ToString() + "-" + validString(dateTimePicker.Value.Month.ToString()) + "-" + validString(dateTimePicker.Value.Day.ToString()) );
-           // MessageBox.Show(dateTimePicker.Value.Year.ToString() + "-" + validString(dateTimePicker.Value.Month.ToString()) + "-" + validString(dateTimePicker.Value.Day.ToString())); // debug
-
-            restMe();
-
-        }
-        private string validString(string str) {
-            
-            if (str.Length<2)  return "0"+str;
-            
-            return str;
-        } // only use for searchByDateButton_Click
+       
+       
     }
 }

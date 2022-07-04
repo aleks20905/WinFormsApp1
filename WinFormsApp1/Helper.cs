@@ -9,8 +9,8 @@ namespace FormUI {
     public static class Helper {
         private static string Host = "localhost";
         private static string User = "postgres";
-        private static string DBname = "TestDB";
-        private static string Password = "postgres";
+        private static string DBname = "traindb";
+        private static string Password = "123";
         private static string Port = "5432";
 
         private static string connString =
